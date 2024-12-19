@@ -1,3 +1,4 @@
+import NavBar from "./components/NavBar";
 import { Button } from "./components/ui/button";
 import {
   Grid,
@@ -17,7 +18,7 @@ function App() {
         }}
       >
         <GridItem area="nav" bg={"blue"}>
-          NavBar
+          <NavBar/>
         </GridItem>
         {showSidebar && (
           <GridItem area="aside" bg={"red"}>
