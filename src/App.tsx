@@ -1,33 +1,30 @@
+import GameGrid from "./components/GameGrid";
 import NavBar from "./components/NavBar";
-import { Button } from "./components/ui/button";
-import {
-  Grid,
-  GridItem,
-  HStack,
-  Show,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Grid, GridItem, useBreakpointValue } from "@chakra-ui/react";
 function App() {
   const showSidebar = useBreakpointValue({ base: false, lg: true });
   return (
     <>
       <Grid
         templateAreas={{
-          base: `"nav " "main"`,
-          lg: `"nav nav " "aside main"`,
+          base: `"nav " "main" "footer"`,
+          lg: `"nav nav " "aside main" "footer footer"`,
         }}
       >
-        <GridItem area="nav" bg={"blue"}>
-          <NavBar/>
+        <GridItem area="nav">
+          <NavBar />
         </GridItem>
+
         {showSidebar && (
           <GridItem area="aside" bg={"red"}>
-            Side Bar
+            Sidebar
           </GridItem>
         )}
-
         <GridItem area="main" bg={"green"}>
-          Main content
+          <GameGrid />
+        </GridItem>
+        <GridItem area="footer" bg={"brown"}>
+        footer
         </GridItem>
       </Grid>
     </>

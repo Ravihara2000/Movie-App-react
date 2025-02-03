@@ -1,11 +1,13 @@
-import React from 'react'
+import { HStack, Image, Text } from '@chakra-ui/react';
+import logo from '../assets/logo.png'
 
 const NavBar = () => {
   return (
-    <div>
-      Navbar Edited
-    </div>
-  )
+   <HStack>
+    <Image src={logo} boxSize={"60px"}/>
+    <Text>Nav Bar</Text>
+   </HStack>
+  );
 }
 
 export default NavBar
