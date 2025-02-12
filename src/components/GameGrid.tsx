@@ -3,7 +3,7 @@ import useGames from "../hooks/useGames";
 import { GameCard } from "./GameCard";
 import GAmeCardSkeleton from "./GAmeCardSkeleton";
 const GameGrid = () => {
-  const { games, error, loading } = useGames();
+  const { data, error, loading } = useGames();
 
   const skeletons = [1, 2, 3, 4, 5, 6,7,8,9,10,11,12];
   return (
@@ -15,7 +15,7 @@ const GameGrid = () => {
         gap={"40px"}
       >
         {loading && skeletons.map((s) => <GAmeCardSkeleton key={s} />)}
-        {games.map((game) => (
+        {data.map((game) => (
           <GameCard key={game.id} game={game} />
         ))}
       </SimpleGrid>

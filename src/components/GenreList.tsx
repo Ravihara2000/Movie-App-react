@@ -1,16 +1,25 @@
-import React from 'react'
-import useGenre from '../hooks/useGenre'
+import { HStack, Image, List, ListItem, Text } from "@chakra-ui/react";
+import useGenre from "../hooks/useGenre";
+import getOptimizedImageUrl from "../services/image-url";
 
-function GenreList() {
-    const {genre} = useGenre();
+const GenreList = () => {
+  const { data } = useGenre();
   return (
-    <ul>
-        {
-            genre.map((genre) =>
-                 <li key={genre.id}>{genre.name}</li>)
-        }
-    </ul>
-  )
-}
+    <List.Root listStyle={"none"}>
+      {data.map((genre) => (
+        <ListItem key={genre.id} padding={"5px"}> 
+        <HStack>
+            <Image
+              boxSize="32px"
+              borderRadius={8}
 
-export default GenreList
+              src={getOptimizedImageUrl(genre.image_background)}/>
+              <Text fontSize={"lg"} >{genre.name}</Text>
+        </HStack>
+        </ListItem>
+      ))}
+    </List.Root>
+  );
+};
+
+export default GenreList;
