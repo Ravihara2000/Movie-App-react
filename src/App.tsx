@@ -1,4 +1,5 @@
 import GameGrid from "./components/GameGrid";
+import GenreList from "./components/GenreList";
 import NavBar from "./components/NavBar";
 import { Grid, GridItem, useBreakpointValue } from "@chakra-ui/react";
 function App() {
@@ -16,8 +17,8 @@ function App() {
         </GridItem>
 
         {showSidebar && (
-          <GridItem area="aside" bg={"red"}>
-            Sidebar
+          <GridItem area="aside" >
+            <GenreList/>
           </GridItem>
         )}
         <GridItem area="main">
