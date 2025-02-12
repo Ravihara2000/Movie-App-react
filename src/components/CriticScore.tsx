@@ -4,7 +4,7 @@ interface CriticScoreProps {
   score: number;
 }
 const CriticScore = ({ score }: CriticScoreProps) => {
-    let color = score > 90 ? "green" : score > 60 ? "yellow" : ""
+    const color = score > 89 ? "green" : score > 60 ? "yellow" : ""
   return (
     <Badge
       fontSize={"14px"}
